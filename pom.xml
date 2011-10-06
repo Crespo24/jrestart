@@ -8,9 +8,9 @@
     <version>0.1-SNAPSHOT</version>
     <packaging>war</packaging>
     <name>jRESTart</name>
-    <description>jRESTart - A basic project providing a simple, yet sufficient example on how to 
-                 implement and use RESTful web services in Java, thus reducing the time needed 
-                 to have your application up and running. Requires Apache Maven to build, test or deploy.
+    <description>jRESTart - A basic project providing a simple, yet sufficient example on how to
+        implement and use RESTful web services in Java, thus reducing the time needed
+        to have your application up and running. Requires Apache Maven to build, test or deploy.
     </description>
     <url>http://code.google.com/p/jrestart/</url>
 
@@ -342,7 +342,7 @@
         </license>
     </licenses>
 
-    <!-- Source repository --> 
+    <!-- Source repository -->
     <scm>
         <url>http://code.google.com/p/jrestart/source/checkout</url>
         <connection>scm:svn:https://jrestart.googlecode.com/svn/trunk</connection>
@@ -414,7 +414,16 @@
             </plugin>
             -->
 
+            <plugin>
+                <artifactId>maven-assembly-plugin</artifactId>
+                <version>2.2-beta-2</version>
+                <configuration>
+                    <descriptor>src/main/assembly/dep.xml</descriptor>
+                </configuration>
+            </plugin>
+
         </plugins>
+
     </reporting>
 
 </project>
