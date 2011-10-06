@@ -1,0 +1,1 @@
+place here any file needed by the tests, e.g. persistence.xml

@@ -1,0 +1,1 @@
+place here files like persistence.xml (in case of using JPA)
