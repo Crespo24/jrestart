@@ -149,21 +149,27 @@
             <artifactId>jetty</artifactId>
             <version>6.0.2</version>
             <type>jar</type>
-            <scope>provided</scope>
+            <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>jetty</groupId>
             <artifactId>jetty-util</artifactId>
             <version>6.0.2</version>
             <type>jar</type>
-            <scope>provided</scope>
+            <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>javax.servlet</groupId>
             <artifactId>servlet-api</artifactId>
             <version>2.5</version>
             <type>jar</type>
-            <scope>provided</scope>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.httpcomponents</groupId>
+            <artifactId>httpclient</artifactId>
+            <version>4.1.2</version>
+            <scope>test</scope>
         </dependency>
 
         <!--Jersey JAX-RS implementation-->

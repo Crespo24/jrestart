@@ -14,20 +14,20 @@
         </groups>
         -->
 
-        <!--
         <classes>
 
-            <class name="com.example.jrestart.dal.DAOTest"/>
+            <class name="com.example.jrestart.EmbeddedServerTest"/>
 
+        <!--
             <class name="com.example.jrestart.business.BusinessTest">
                 <methods>
                     <exclude name="createObjects"/>
                     <exclude name="removeObjects"/>
                 </methods>
             </class>
+        -->
 
         </classes>
-        -->
 
     </test>
 
