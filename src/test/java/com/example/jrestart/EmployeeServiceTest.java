@@ -21,11 +21,11 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-public class EmbeddedServerTest {
+public class EmployeeServiceTest {
 
     private static final int DEFAULT_HTTP_PORT = 8090;
     private static final String WAR_LOCATION = "src/main/webapp";
-    private static Logger logger = Logger.getLogger(EmbeddedServerTest.class);
+    private static Logger logger = Logger.getLogger(EmployeeServiceTest.class);
 
     public static final String URL = "http://localhost:8090/rest/employees";
 
@@ -183,18 +183,12 @@ public class EmbeddedServerTest {
         }
     }
 
-    private void executeDELETERequest(String url, String mimeType) {
+    private void executeDELETERequest(String url) {
         DefaultHttpClient httpClient = null;
         try {
             httpClient = new DefaultHttpClient();
             HttpDelete deleteRequest = new HttpDelete(url);
-            deleteRequest.addHeader("accept", mimeType);
             HttpResponse response = httpClient.execute(deleteRequest);
-
-//            StringEntity inputEntity = new StringEntity(input);
-//            inputEntity.setContentType("application/json");
-//            deleteRequest.setEntity(inputEntity);
-//            HttpResponse response = httpClient.execute(deleteRequest);
 
             if (response.getStatusLine().getStatusCode() != Response.Status.OK.getStatusCode() &&
                 response.getStatusLine().getStatusCode() != Response.Status.NO_CONTENT.getStatusCode()) {
@@ -267,7 +261,7 @@ public class EmbeddedServerTest {
         executeGETRequest(GET_LIST_EMPLOYEES_JSON_URL, "application/json");
 
         //delete newly added employee
-        executeDELETERequest(DELETE_REMOVE_EMPLOYEE_JSON_URL, "text/plain");
+        executeDELETERequest(DELETE_REMOVE_EMPLOYEE_JSON_URL);
         executeGETRequest(GET_LIST_EMPLOYEES_JSON_URL, "application/json");
     }
 

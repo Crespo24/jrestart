@@ -16,7 +16,7 @@
 
         <classes>
 
-            <class name="com.example.jrestart.EmbeddedServerTest"/>
+            <class name="com.example.jrestart.EmployeeServiceTest"/>
 
         <!--
             <class name="com.example.jrestart.business.BusinessTest">
