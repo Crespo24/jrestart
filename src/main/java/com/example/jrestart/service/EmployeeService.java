@@ -28,6 +28,10 @@ public class EmployeeService {
         employees.put(employee2.getEmployeeId(), employee2);
     }
 
+    /*
+     * RETRIEVE method(s) (using HTTP GET)
+     */
+
     @GET
     @Path("/hello")
     @Produces("text/plain")
@@ -70,6 +74,10 @@ public class EmployeeService {
         return employees.get(employeeId);
     }
 
+    /*
+     * CREATE method(s) (using HTTP POST)
+     */
+
     @POST
 	@Path("/post")
 	@Consumes("application/json")
@@ -77,5 +85,13 @@ public class EmployeeService {
 		String result = "Employee added to the list : " + employee;
 		return Response.status(201).entity(result).build();
 	}
+
+    /*
+     * UPDATE method(s) (using HTTP PUT)
+     */
+
+    /*
+     * DELETE method(s) (using HTTP DELETE)
+     */
 
 }
