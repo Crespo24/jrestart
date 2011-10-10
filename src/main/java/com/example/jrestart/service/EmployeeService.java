@@ -2,10 +2,8 @@ package com.example.jrestart.service;
 
 import com.example.jrestart.data.Employee;
 
-import javax.ws.rs.GET;
-import javax.ws.rs.Path;
-import javax.ws.rs.PathParam;
-import javax.ws.rs.Produces;
+import javax.ws.rs.*;
+import javax.ws.rs.core.Response;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -71,5 +69,13 @@ public class EmployeeService {
     public Employee getEmployeeJSON(@PathParam("employeeid") String employeeId) {
         return employees.get(employeeId);
     }
+
+    @POST
+	@Path("/post")
+	@Consumes("application/json")
+	public Response addEmployeeJSON(Employee employee) {
+		String result = "Employee added to the list : " + employee;
+		return Response.status(201).entity(result).build();
+	}
 
 }
