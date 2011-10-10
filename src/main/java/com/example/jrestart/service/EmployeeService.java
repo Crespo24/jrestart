@@ -79,19 +79,45 @@ public class EmployeeService {
      */
 
     @POST
-	@Path("/post")
-	@Consumes("application/json")
-	public Response addEmployeeJSON(Employee employee) {
-		String result = "Employee added to the list : " + employee;
-		return Response.status(201).entity(result).build();
-	}
+    @Path("/post")
+    @Consumes("application/json")
+    public Response addEmployeeJSON(Employee employee) {
+        employees.put(employee.getEmployeeId(), employee);
+        String result = "Employee added to the list : " + employee;
+        int status = Response.Status.CREATED.getStatusCode();
+        return Response.status(status).entity(result).build();
+    }
 
     /*
      * UPDATE method(s) (using HTTP PUT)
      */
+    @PUT
+    @Path("/put")
+    @Consumes("application/json")
+    public Response updateEmployeeJSON(Employee employee) {
+        employees.put(employee.getEmployeeId(), employee);
+        String result = "Employee updated : " + employee;
+        int status = Response.Status.CREATED.getStatusCode();
+        return Response.status(status).entity(result).build();
+    }
 
     /*
      * DELETE method(s) (using HTTP DELETE)
+     * Note: When a resource is removed with DELETE, the HTTP specification requires that you
+     * send a response code of 200, “OK” and a response message body or a response code
+     * of 204, “No Content” without any response body. In our application, we will send a
+     * status of 204 and no response message.
      */
+    @DELETE
+    @Path("/delete/{id}")
+    public Response deleteEmployeeJSON(@PathParam("id") String employeeId) {
+        employees.remove(employeeId);
 
+//        String result = "Employee ID removed : " + employeeId;
+//        int status = Response.Status.OK.getStatusCode();
+//        return Response.status(status).entity(result).build();
+
+        int status = Response.Status.NO_CONTENT.getStatusCode();
+        return Response.status(status).build();
+    }
 }
