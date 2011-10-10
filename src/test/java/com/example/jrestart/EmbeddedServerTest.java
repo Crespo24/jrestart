@@ -26,7 +26,7 @@ public class EmbeddedServerTest {
 
     public static final String HELLO_URL = URL + "/hello";
     public static final String ECHO_URL = URL + "/echo/HelloWorld";
-    public static final String LIST_EMPLOYEES_URL = URL;
+    public static final String LIST_EMPLOYEES_URL = URL + "/employees";
     public static final String GET_EMPLOYEE_URL = URL + "/employee/1";
     public static final String LIST_EMPLOYEES_JSON_URL = URL + "/json/employees";
     public static final String GET_EMPLOYEE_JSON_URL = URL + "/json/employee/1";
@@ -105,10 +105,10 @@ public class EmbeddedServerTest {
         getRequest(ECHO_URL, "text/plain");
     }
 
-//    @Test
-//    public void testListEmployees() {
-//        getRequest(LIST_EMPLOYEES_URL, "application/xml");
-//    }
+    @Test
+    public void testListEmployees() {
+        getRequest(LIST_EMPLOYEES_URL, "application/xml");
+    }
 
     @Test
     public void testGetEmployee() {
