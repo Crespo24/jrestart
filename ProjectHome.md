@@ -1,0 +1,1 @@
+A basic project providing a simple, yet sufficient example on how to implement and use RESTful web services in Java, thus reducing the time needed to have your application up and running. Requires Apache Maven to build, test or deploy.
